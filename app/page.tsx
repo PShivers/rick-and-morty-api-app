@@ -30,14 +30,17 @@ export default function Page() {
   const characters = data.characters.results;
 
   return (
-    <div>
-      <h1>Rick and Morty Characters</h1>
+    <div className='flex flex-col justify-center items-center w-full '>
+      <h1 className={'text-3xl my-5'}>Rick and Morty Characters</h1>
+      <div className='flex flex-wrap justify-center items-center'>
       {characters.map((character) => (
-        <div key={character.id}>
+        <div key={character.id} className='m-1'>
           <img src={character.image} alt={character.name} />
           <h3>{character.name}</h3>
         </div>
       ))}
+      </div>
+
     </div>
   );
 }
