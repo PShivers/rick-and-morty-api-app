@@ -1,6 +1,7 @@
 "use client"
 import { useQuery, gql } from '@apollo/client';
 import apolloClient from '../apollo-client';
+import CharacterCard from '../components/CharacterCard';
 import { Character } from '../types';
 
 
@@ -36,10 +37,7 @@ export default function Page() {
       <h1 className={'text-3xl my-5'}>Rick and Morty Characters</h1>
       <div className='flex flex-wrap justify-center items-center'>
       {characters.map((character:Character) => (
-        <div key={character.id} className='m-1'>
-          <img src={character.image} alt={character.name} />
-          <h3>{character.name}</h3>
-        </div>
+             <CharacterCard key={character.id} character={character} />
       ))}
       </div>
 
