@@ -38,7 +38,7 @@ export default function Page({params}:{
   }
   
   const episode = data.episode;
-  console.log(episode)
+
   return (  
   <div className='w-full flex flex-col justify-center items-center'>
       <h1 className='text-3xl mb-5'>{episode.name}</h1>
