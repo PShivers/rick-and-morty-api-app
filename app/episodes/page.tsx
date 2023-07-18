@@ -8,6 +8,12 @@ import { Episode } from '../../types';
 const EPISODES_QUERY = gql`
 query GetEpisodes {
   episodes {
+    info {
+      count
+      pages
+      next
+      prev
+    }
     results {
       id
       name
@@ -19,7 +25,7 @@ query GetEpisodes {
 `;
 
 export default function Page() {
-  const { loading, error, data } = useQuery(EPISODES_QUERY, {
+  const { loading, error, data } = useQuery(EPISODES_QUERY,{    
     client: apolloClient,
   });
 
